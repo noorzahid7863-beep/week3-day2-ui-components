@@ -12,7 +12,7 @@
     <header class="site-header">
         <div class="container nav-container">
             <h1 class="logo">DevRoadmap</h1>
-            <nav class="main-nav">
+            <nav class="main-nav" aria-label="Main Navigation">
                 <a href="#features">Features</a>
                 <a href="#cards">Grid Layouts</a>
                 <a href="#contact">Contact</a>
@@ -21,21 +21,28 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="hero">
         <div class="container hero-content">
             <h2>Advanced CSS Layouts & Responsive Design</h2>
-            <p>Mastering CSS Grid, Flexbox, and mobile-first architecture for modern web applications.</p>
+            <p>Mastering CSS Grid auto-fit, Flexbox, and mobile-first architecture for modern web applications.</p>
             <a href="#cards" class="btn-primary">Explore Components</a>
         </div>
     </section>
 
-    <!-- Main Content Grid -->
-    <main class="container main-content" id="cards">
-        <section class="card-grid">
+    <!-- Features / Main Content Grid -->
+    <main class="container main-content">
+        
+        <!-- Features Section Added for Navigation Link Fix -->
+        <section id="features" class="features-intro">
+            <h3>Core Layout & Architectural Features</h3>
+            <p>Exploring modern CSS mechanics, dynamic grid wrapping, and accessibility standards.</p>
+        </section>
+
+        <section id="cards" class="card-grid">
             
             <article class="feature-card">
                 <h3>CSS Grid Engine</h3>
-                <p>Using auto-fit and auto-minmax columns for fluid responsive card grids without media query clutter.</p>
+                <p>Using auto-fit and minmax columns for fluid responsive card grids without media query clutter.</p>
             </article>
 
             <article class="feature-card">
@@ -50,6 +57,15 @@
 
         </section>
     </main>
+
+    <!-- Contact Section Added for Navigation Link Fix -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h3>Get in Touch</h3>
+            <p>Have questions regarding Week 3 Day 2 layout implementation?</p>
+            <a href="#hero" class="btn-primary" style="margin-top: 1rem;">Back to Top</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="site-footer">

@@ -64,6 +64,14 @@ body {
     color: var(--primary-color);
 }
 
+/* Accessibility: Explicit Focus States */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
@@ -100,14 +108,40 @@ body {
     background-color: var(--bg-light);
 }
 
-/* Main Content & CSS Grid Layout */
+/* Features Intro & Contact Section Styling */
+.features-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.features-intro h3 {
+    color: var(--secondary-color);
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section {
+    background-color: var(--white);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 3rem;
+}
+
+.contact-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Main Content & CSS Grid Layout with Auto-Fit */
 .main-content {
     padding: 3rem 0;
 }
 
 .card-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    /* Auto-fit implementation as requested by mentor feedback */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -138,19 +172,9 @@ body {
     margin-top: 2rem;
 }
 
-/* Responsive Media Queries (Tablet & Desktop Breakpoints) */
+/* Responsive Media Queries (Tablets & Desktops) */
 @media (min-width: 600px) {
     .hero-content h2 {
         font-size: 2.5rem;
-    }
-    
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .card-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
