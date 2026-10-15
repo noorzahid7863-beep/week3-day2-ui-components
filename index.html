@@ -1,77 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 3 - Day 2: Advanced UI Components & Responsive Layout</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
 
-    <!-- Header Section -->
-    <header class="site-header">
-        <div class="container nav-container">
-            <h1 class="logo">DevRoadmap</h1>
-            <nav class="main-nav" aria-label="Main Navigation">
-                <a href="#features">Features</a>
-                <a href="#cards">Grid Layouts</a>
-                <a href="#contact">Contact</a>
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-sky-600 tracking-tight">DevRoadmap</h1>
+            <nav class="flex space-x-6" aria-label="Main Navigation">
+                <a href="#features" class="text-slate-600 hover:text-sky-600 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 rounded-md px-1">Features</a>
+                <a href="#cards" class="text-slate-600 hover:text-sky-600 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 rounded-md px-1">Grid Layouts</a>
+                <a href="#contact" class="text-slate-600 hover:text-sky-600 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 rounded-md px-1">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-        <div class="container hero-content">
-            <h2>Advanced CSS Layouts & Responsive Design</h2>
-            <p>Mastering CSS Grid auto-fit, Flexbox, and mobile-first architecture for modern web applications.</p>
-            <a href="#cards" class="btn-primary">Explore Components</a>
+    <section id="hero" class="bg-gradient-to-r from-sky-900 to-slate-900 text-white py-16 px-6 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Advanced Tailwind Layouts & Responsive Design</h2>
+            <p class="text-slate-300 text-base md:text-lg">Mastering Grid auto-fit, Flexbox, and mobile-first architecture with utility-first Tailwind CSS.</p>
+            <a href="#cards" class="inline-block bg-sky-500 hover:bg-sky-400 text-slate-900 font-bold px-6 py-3 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-slate-900 shadow-lg">Explore Components</a>
         </div>
     </section>
 
-    <!-- Features / Main Content Grid -->
-    <main class="container main-content">
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-grow space-y-12">
         
-        <!-- Features Section Added for Navigation Link Fix -->
-        <section id="features" class="features-intro">
-            <h3>Core Layout & Architectural Features</h3>
-            <p>Exploring modern CSS mechanics, dynamic grid wrapping, and accessibility standards.</p>
+        <!-- Features Section -->
+        <section id="features" class="text-center space-y-2 border-b border-slate-200 pb-8">
+            <h3 class="text-2xl font-bold text-slate-900">Core Layout & Architectural Features</h3>
+            <p class="text-slate-600 max-w-xl mx-auto">Exploring modern CSS mechanics, dynamic grid wrapping, Tailwind CSS utility classes, and accessibility standards.</p>
         </section>
 
-        <section id="cards" class="card-grid">
-            
-            <article class="feature-card">
-                <h3>CSS Grid Engine</h3>
-                <p>Using auto-fit and minmax columns for fluid responsive card grids without media query clutter.</p>
-            </article>
+        <!-- Grid Layout Section with Auto-Fit -->
+        <section id="cards" class="space-y-6">
+            <h3 class="text-xl font-bold text-slate-900">Dynamic Grid System</h3>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
+                
+                <article class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-bold text-slate-800">CSS Grid Auto-Fit Engine</h4>
+                        <p class="text-slate-600 text-sm">Fluid responsive card layouts using dynamic minmax columns without media query clutter.</p>
+                    </div>
+                    <button class="mt-4 text-xs font-semibold text-sky-600 hover:text-sky-700 text-left focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1 w-fit">Learn More &rarr;</button>
+                </article>
 
-            <article class="feature-card">
-                <h3>Flexbox Alignment</h3>
-                <p>Perfect alignment of navigation links, buttons, and flexible container items across all screen sizes.</p>
-            </article>
+                <article class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-bold text-slate-800">Flexbox Navigation</h4>
+                        <p class="text-slate-600 text-sm">Single-axis Flexbox alignment for header items, buttons, and navigation controls.</p>
+                    </div>
+                    <button class="mt-4 text-xs font-semibold text-sky-600 hover:text-sky-700 text-left focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1 w-fit">Learn More &rarr;</button>
+                </article>
 
-            <article class="feature-card">
-                <h3>Mobile-First Design</h3>
-                <p>Building from smaller viewports up to tablets and large desktop displays using clean breakpoints.</p>
-            </article>
+                <article class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-bold text-slate-800">Mobile-First & Accessibility</h4>
+                        <p class="text-slate-600 text-sm">Built with explicit ARIA tags, visible keyboard focus rings, and mobile-first breakpoints.</p>
+                    </div>
+                    <button class="mt-4 text-xs font-semibold text-sky-600 hover:text-sky-700 text-left focus:outline-none focus:ring-2 focus:ring-sky-500 rounded px-1 w-fit">Learn More &rarr;</button>
+                </article>
 
+            </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-slate-100 p-8 rounded-2xl border border-slate-200 text-center space-y-4">
+            <h3 class="text-2xl font-bold text-slate-900">Get in Touch</h3>
+            <p class="text-slate-600 max-w-md mx-auto">Have questions regarding Week 3 Day 2 layout implementation and Tailwind CSS integration?</p>
+            <a href="#hero" class="inline-block bg-slate-900 hover:bg-slate-800 text-white font-medium px-5 py-2.5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">Back to Top</a>
+        </section>
+
     </main>
 
-    <!-- Contact Section Added for Navigation Link Fix -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h3>Get in Touch</h3>
-            <p>Have questions regarding Week 3 Day 2 layout implementation?</p>
-            <a href="#hero" class="btn-primary" style="margin-top: 1rem;">Back to Top</a>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2026 Full-Stack Engineering Roadmap. Participant: Noor Zahid.</p>
-        </div>
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-sm border-t border-slate-800">
+        <p>&copy; 2026 Full-Stack Engineering Roadmap. Participant: Noor Zahid.</p>
     </footer>
 
 </body>
